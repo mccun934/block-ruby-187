@@ -1,1 +1,21 @@
 test code to lock up ruby 1.8.7
+
+To reproduce:
+
+1) in one term start the server, 'ruby server.rb'
+
+2) in another term start a client, 'ruby client.rb'
+
+3) watch as you get back results from the server:
+1
+2
+3
+4
+
+5) When the count reaches 5 the server will start writing a 400MB file to /var/tmp, open
+   another terminal and start another client. 'ruby client.rb'  Note that you get no output
+   but once the IO completes you will start getting return values.
+
+6) You can start up as many clients as you want after it is done writing, you will get
+   output on each
+
