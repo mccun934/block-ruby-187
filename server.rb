@@ -8,8 +8,8 @@ loop {
     sleep 1
     if clientcount == 5
       puts "clientcount 5, Start writing to a file"
-      f = File.new('/var/tmp/junk-file-%s.out' % rand(10000), 'w')
-      # Write a roughly 400MB file to /var/tmp.  
+      f = File.new('/dev/null', 'a')
+      # Write a roughly 400MB file to /dev/null
       # Takes generally from 5-30 seconds
       #
       # At this point when the server is writing the file any *new* clients
